@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatify</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="login-screen" class="screen">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter your name" />
+    <button id="loginBtn">Join Chat</button>
+  </div>
+
+  <div id="chat-screen" class="screen hidden">
+    <header>
+      <h2>Chatify</h2>
+      <span id="user-label" class="user-label"></span>
+      <button id="logoutBtn" class="logoutBtn">Logout</button>
+    </header>
+    <div id="messages"></div>
+    <form id="messageForm">
+      <input id="messageInput" autocomplete="off" placeholder="Type a message..." />
+      
+
+
+      <input type="file" id="attachmentInput" class="hidden" multiple />
+      <button type="button" id="attachBtn" class="icon-button"><i class="ri-attachment-2"></i></button>
+      <button class="sendbtn"><i class="ri-send-plane-2-fill"></i></button>
+    </form>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

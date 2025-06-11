@@ -1,0 +1,462 @@
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+body {
+  margin: 0;
+  font-family: 'poppins', sans-serif;
+  background: linear-gradient(180deg, #000d5c 0%, #31deeb 100%);
+  color: #333;
+  height: 100vh;
+  /* Set body height to 100% of viewport height */
+  overflow: hidden;
+  /* Hide overflow content on the body */
+
+}
+
+html {
+  height: 100vh;
+  /* Ensure html also takes full height */
+  overflow: hidden;
+  /* Hide overflow content on html */
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* Make screens take full viewport height */
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  /* Include padding in the height calculation */
+}
+
+.screen h2 {
+  margin: 0;
+  padding: 1rem;
+  color: #FFFFFF;
+  font-size: 2rem;
+}
+
+.screen button {
+  padding: 1rem;
+  background-color: #00495f;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.screen button:hover {
+  background-color: #357abf;
+}
+
+.hidden {
+  display: none;
+}
+
+#chat-screen {
+  justify-content: space-between;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* padding: 1rem; */
+  background-color: #4a90e2;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  /* Prevent header from shrinking */
+}
+
+#messages {
+  flex: 1;
+  /* Allows #messages to take up remaining space */
+  overflow-y: auto;
+  /* Makes only this div scrollable vertically */
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  /* Prevents flex item from expanding beyond its content */
+  background: linear-gradient(to bottom, #e0f2f7, #ffffff);
+}
+
+/* Common message bubble styles */
+.message {
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+}
+
+/* Your own messages (right aligned) */
+.message.you {
+  align-self: flex-end;
+  /* Aligns to the right */
+  background-color: #4a90e2;
+  color: white;
+  border-bottom-right-radius: 0;
+  /* Pointy corner towards sender */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Others' messages (left aligned) */
+.message.other {
+  align-self: flex-start;
+  /* Aligns to the left */
+  background-color: #93eebd;
+  color: #000000;
+  border-bottom-left-radius: 0;
+  /* Pointy corner towards sender */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* System messages (centered, dark blue, no bubble) */
+.message.system {
+  background-color: #f0f8f4;
+  align-self: center;
+  /* Centers the div horizontally */
+  /* background: none; No background bubble */
+  color: darkblue;
+  /* Dark blue font */
+  font-weight: 600;
+  font-size: 0.85rem;
+  height: 20px;
+  border: 1px solid #333;
+  padding: 0;
+  /* No padding */
+  text-align: center;
+  /* Centers the text within the div */
+  width: 100%;
+  /* Allows it to span full width for centering */
+  margin-bottom: 10px;
+  /* Keep consistent spacing */
+}
+
+form {
+  display: flex;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  flex-shrink: 0;
+  /* Prevent form from shrinking */
+}
+
+#messageInput {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #000000;
+  outline: none;
+  background-color: #e2fdef;
+}
+
+#chat-screen .logoutBtn {
+  /* padding: 7px; */
+  background-color: #cffff5;
+  color: #000a27;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: small;
+  margin: 1rem;
+  font-family: poppins, sans-serif;
+}
+
+#messageForm button {
+  padding: 7px;
+  background-color: #efefef;
+  color: #000a27;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: medium;
+  margin: 0.6rem;
+  font-family: poppins, sans-serif;
+  size: 1.2rem;
+}
+
+#messageForm button:hover {
+  padding: 7px;
+  background-color: #bbb6b6;
+  color: #000a27;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: medium;
+  margin: 0.6rem;
+  font-family: poppins, sans-serif;
+  size: 1.2rem;
+}
+
+#emoji-picker {
+  position: absolute;
+  bottom: 100%;
+  /* Position above the form */
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+  /* Responsive grid */
+  gap: 5px;
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+  /* Ensure it's above other content */
+  margin-bottom: 5px;
+  /* Space between picker and form */
+}
+.icon-button {
+  background: none;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  font-size: 1.5rem; /* Larger emoji/clip icon */
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1; /* Align text vertically */
+  color: #555; /* Default icon color */
+  transition: color 0.2s;
+}
+
+.icon-button:hover {
+  color: #4a90e2;
+}
+
+.emoji-item {
+  font-size: 1.5rem;
+  cursor: pointer;
+  text-align: center;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.emoji-item:hover {
+  background-color: #f0f0f0;
+}
+
+.user-label {
+  font-size: small;
+  padding: 5px;
+  /* background-color: #cffff5; */
+  text-align: center;
+  color: #000a27;
+  border-radius: 2rem;
+
+}
+
+form button {
+  padding: 1rem;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin: 10px;
+  width: 80%;
+  /* Good for responsiveness */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  /* Ensure button text scales nicely */
+}
+
+/* Media queries for larger screens */
+@media (min-width: 768px) {
+  #messages {
+    padding: 2rem;
+    /* More padding on larger screens */
+  }
+
+  #messageInput {
+    font-size: 1.1rem;
+    /* Slightly larger font for input on tablets/desktops */
+  }
+
+  input[type="text"] {
+    width: 60%;
+    /* Adjust width for desktop login screen */
+  }
+}
+
+/* Optional: further refine for very small screens */
+@media (max-width: 480px) {
+  .screen {
+    padding: 0.5rem;
+  }
+
+  #messages {
+    padding: 0.5rem;
+  }
+
+  .message {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  #messageInput {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  form button {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  input[type="text"] {
+    padding: 8px;
+    margin: 8px;
+    font-size: 0.95rem;
+  }
+
+  button {
+    padding: 8px 15px;
+    font-size: 0.95rem;
+  }
+}
